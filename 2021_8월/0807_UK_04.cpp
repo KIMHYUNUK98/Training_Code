@@ -19,4 +19,4 @@ int main() {
         cout << C[i] << endl;
     }
     return 0;
-}
+} 

@@ -14,4 +14,4 @@ int main() {
     cout << first * stoi(second) << endl;
 
     return 0;
-}
+} 

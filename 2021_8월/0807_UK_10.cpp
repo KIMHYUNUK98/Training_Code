@@ -20,7 +20,7 @@ int main() {
     for(int i = 0 ; i < num ; i++) {
         if(arr[i] < larger) {
             cout << arr[i] << " ";
-        }
+        } 
     }
     return 0;
 }

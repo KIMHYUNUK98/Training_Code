@@ -13,4 +13,4 @@ int main() {
     cout << ((A%C) * (B%C))%C << endl;
 
     return 0;
-}
+} 
