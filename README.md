@@ -15,6 +15,8 @@
  **visited와 이중 벡터 map은 방문한 경우 1을 방문하지 않은 경우 0을 입력해서 코드를 짠다**  
  **한개의 줄을 한개씩 받는 코드 ---> scanf("%1d", &arr[i][j]);**  
  **int 말고 string으로 입력받을 경우 하나 하나 분리가 가능한 장점이 있음**  
+ **미로에서 최소 경로 찾는 문제 --> 단순히 DFS를 사용하면 미로의 길 개수만 파악이 가능함**  
+ **최소경로를 찾기 위해서 -> BackTrack + 1 해주는 같은 이중 배열이 필요하다.**  
  
  ### Math
  >**String 타입으로 입력을 받고 string[0] - '0' 을 하면 실제 숫자처럼 사용할 수 있음**  
@@ -26,4 +28,12 @@
  >**Stack으로 괄호의 VPS 유무를 따지는 문제에서 Stack을 n 번 실행할 때마다 초기화 해줘야함**
  **for 문 안에서 stack<char> S를 선언한다**  
   
+ ### TREE
+ >**문자를 숫자로 바꾸기 위해서 root의 index 는 root - 'A' 를 통해서 숫자로 바꿔준다.**  
+ **root_index = root - 'A' // root 문자를 index로 바꿔주는 작업**  
+ **struct Node {}; 선언 -> Node *node; -> node[root_index].right = &node[right - 'A'] 주소할당**  
+ **Tree에서 부모노드를 찾는 법**  
+ **Adjecant array를 만들어서 DFS를 통해 parent를 하나씩 배열에 넣어준다.**  
+ **vector<int> tree[MAX] // 이중 포인터를 통해서 (이중 벡터) 간접 배열을 만들어주고 BFS, DFS 한다**  
+ 
   
