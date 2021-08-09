@@ -3,45 +3,55 @@
 
 using namespace std;
 
-vector<int> tree;
+vector<int> tree[55];
+vector<int> visited ={0,};
 int count = 0;
+int num;
+int node;
+int root;
+int del_node;
+int next_node;
 
-int DFS(int cur_node) {
-    int ret = 1;
-    int child = 0;
+void DFS(int cur_node) {
+    if(visited[cur_node] == 1) return;
+    visited[cur_node] = 1;
 
-    for(int i = 1 ; i < tree[i].size() ; i++) {
-        if(i == del_node) continue;
+    //cout << tree[cur_node].size() << "  ";
+    if(tree[cur_node].size() == 1) {
         count++;
-        DFS(i);
     }
 
-    if(child != 0) return count;
-    else return ret;
+    for(int i = 0 ; i < tree[i].size() ; i++) {
+        next_node = tree[cur_node][i];
+        if(next_node == del_node) continue;
+        if(visited[next_node] == 0) {
+            DFS(next_node);
+        }
+    }
 }
 
 int main() {
-    int num;
-    int node;
-    int root;
-    int del_node;
 
     cin >> num;
 
     //num에 해당하는 만큼 Tree를 기본적으로 설정해야 한다.
     for(int i = 0 ; i < num ; i++) {
         cin >> node;
-        if(node == -1) {
-            tree[i].push_back(node);
+        if(node == -1) root = i;
+        else {
             tree[node].push_back(i);
         }
-        else root = i;
+        tree[i].push_back(-1);
     }
 
     cin >> del_node;
 
-    cout << DFS(0);
+    DFS(root);
 
+    if(del_node != root) {
+        cout << count << "\n";
+    }
+    else cout << 0 << "\n";
 
     return 0;
 }
