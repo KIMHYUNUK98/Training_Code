@@ -16,7 +16,7 @@ int main() {
     for(int j = 0 ; j < num ; j++) {
         scanf("%d", &number);
         for(int i = 4 ; i <=number ; i++) {
-            dp[i] = dp [i-3] + dp[i-2] + dp[i-1];
+            dp[i] = dp[i-3] + dp[i-2] + dp[i-1];
         }
         printf("%d\n", dp[number]);
     }
