@@ -2,14 +2,15 @@
 
 |문제유형|푼 문제 개수|백준 번호|
 |-|-|-|
-|Priority Queue|||
-|Dinamic Programming|||
-|DFS & BFS|||
-|Math|||
-|Data Structure|||
-|Tree|||
-|Divide and Conquer|||
-|Greedy Algorithm|||
+|Priority Queue|   2  |    |
+|Dinamic Programming|   4   | 2839, 1463, 9095|
+|DFS & BFS|   4   |1260, 2667, 10026, 11725, 2178|
+|Math|   13   |1000, 1001, 10998, 10869, 1008, 2739, 10430, 8393, 1330, 10871, 10950, 2753, 2588, 11720, |
+|Data Structure|   3   |10828, 9012, 1158, 10773, 1874, 1966, 2164, 11866|
+|Tree|   4   |1991, 11725, 1967, 1167, 5639|
+|Divide and Conquer|   2   |2447, |
+|Greedy Algorithm|   2   |2839, 11399, 11047, 1931|
+|String|   3   |11720, 1152, 10809|
 
 ## Priority_Queue 사용법
 **1. queue<pair<int,int>> q // priority_queue<int> pq의 사용으로 프린터 큐 알고리즘을 완성**  
