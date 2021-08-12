@@ -108,7 +108,7 @@ void BFS(int start, int end) {
 
 ---
  ## Data Structure
- **1. Stack으로 괄호의 VPS 유무를 따지는 문제에서 Stack을 n 번 실행할 때마다 초기화 해줘야함**
+ **1. Stack으로 괄호의 VPS 유무를 따지는 문제에서 Stack을 n 번 실행할 때마다 초기화 해줘야함**  
  **2. for 문 안에서 stack<char> S를 선언한다**  
  ```cpp
   //VPS 찾는 문제
@@ -123,7 +123,16 @@ void BFS(int start, int end) {
 
   }
  ```
-
+**3-1. 3190번 Dummy 게임 문제에서 직접적으로 필요한 배열은 snake(dequeu), arr[i][j], visited[i][j], dx, dy**  
+**3-2. pair<int, int> 로 선언하는 것은 vector 이거나 deque로 한다.**  
+```cpp
+ vector<pair<int, char>> movement;
+ pair<int, int> tail;
+ deque<pair<int,int>> snake;
+ int arr[MAX][MAX] = {0,};
+ bool visited[MAX][MAX] = {false,};
+```
+ 
 ---
  ## TREE
  **1. 문자를 숫자로 바꾸기 위해서 root의 index 는 root - 'A' 를 통해서 숫자로 바꿔준다.**  
