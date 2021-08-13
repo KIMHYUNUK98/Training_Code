@@ -24,6 +24,7 @@
   queue<pair<int,int>> pi;
   priority_queue<pi, vector<pi>, greater<pi>> q;
   ```
+ 
 
 ---
 ## Dinamic Programming 풀이
