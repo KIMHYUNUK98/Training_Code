@@ -17,7 +17,7 @@ int main() {
 
     for(int i = 1 ; i <= num ; i++) {
         cin >> arr[i];
-    }
+    } 
 
     dp[1] = arr[1];
     dp[2] = arr[1] + arr[2];
