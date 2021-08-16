@@ -12,6 +12,22 @@
 |Greedy Algorithm|   2   |2839, 11399, 11047, 1931|
 |String|   3   |11720, 1152, 10809|
 
+## Programmers 코딩테스트 문제유형 정리
+**1. hash (unordered_map) 사용해서 원하는 문자가 반복된 경우 해당 string을 return하는 문제**  
+```cpp
+unordered_map <string, int> part_arr;
+    for(string name : participant) {
+        part_arr[name]++;
+    }
+    for(string name : completion) {
+        part_arr[name]--;
+    }
+    for(string name : participant) {
+        if(part_arr[name] == 1)
+            return name;
+    }
+```
+
 ## Priority_Queue 사용법
 **1. queue<pair<int,int>> q // priority_queue<int> pq의 사용으로 프린터 큐 알고리즘을 완성**  
   **2. 배열의 우선순위를 주고 싶은 경우 priority_queue에 pus------- 내림차순 자동 정렬**  
