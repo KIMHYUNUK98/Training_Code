@@ -3,10 +3,10 @@
 |문제유형|푼 문제 개수|백준 번호|
 |-|-|-|
 |Priority Queue|   2  |    |
-|Dinamic Programming|   4   | 2839, 1463, 9095|
+|Dinamic Programming|   5   | 2839, 1463, 9095, 2579, 1149|
 |DFS & BFS|   4   |1260, 2667, 10026, 11725, 2178|
 |Math|   13   |1000, 1001, 10998, 10869, 1008, 2739, 10430, 8393, 1330, 10871, 10950, 2753, 2588, 11720, |
-|Data Structure|   9   |10828, 9012, 1158, 10773, 1874, 1966, 2164, 11866, **3190**|
+|Data Structure|   10   |10828, 9012, 1158, 10773, 1874, 1966, 2164, 11866, **3190**, 11651|
 |Tree|   4   |1991, 11725, 1967, 1167, 5639|
 |Divide and Conquer|   2   |2447, |
 |Greedy Algorithm|   2   |2839, 11399, 11047, 1931|
@@ -30,7 +30,8 @@
 ## Dinamic Programming 풀이
  **1. DP 사용 문제의 경우 최솟값, 최댓값 찾는 문제가 대부분**  
  **2. 사용할 수 있는 경우가 제한적이고 첫 번째 & 두 번째 인덱스값을 초기화해주는 경우가 많음**  
- **3. 많은 문제를 풀어보면서 감을 익혀야 좋음**  
+ **3. 문제에서 주어지는 조건을 가지고 수식화해보는 연습!!**  
+ **4. 각각의 배열을 만들어서 최소값 또는 최대값을 어떤 것 중에 고를 지 선택하는 연습**  
  ```cpp
   int num;
   cin >> num;
@@ -57,6 +58,20 @@
       printf("%d\n", dp[number]);
   }
  ```
+ ```cpp
+ for(int i = 1  ; i <= num ; i++) {
+        cin >> dp[i][0] >> dp[i][1] >> dp[i][2];
+
+        dp[i][0] += min(dp[i-1][1], dp[i-1][2]);
+        dp[i][1] += min(dp[i-1][0], dp[i-1][2]);
+        dp[i][2] += min(dp[i-1][0], dp[i-1][1]);
+    }
+ ```
+ ```cpp
+ for(int i = 3 ; i <= num ; i++) {
+        dp[i] = max(arr[i] + dp[i-2], arr[i] + arr[i-1] + dp[i-3]);
+    }
+```
  
 ---
 ## DFS 와 BFS 탐색법
@@ -126,12 +141,22 @@ void BFS(int start, int end) {
  ```
 **3-1. 3190번 Dummy 게임 문제에서 직접적으로 필요한 배열은 snake(dequeu), arr[i][j], visited[i][j], dx, dy**  
 **3-2. pair<int, int> 로 선언하는 것은 vector 이거나 deque로 한다.**  
+**4. pair를 sort할 때 compare 알고리즘 짜는 방법 알고있기**  
+**4-1. < 의 경우 오름차순 / > 의 경우 내림차순**  
 ```cpp
  vector<pair<int, char>> movement;
  pair<int, int> tail;
  deque<pair<int,int>> snake;
  int arr[MAX][MAX] = {0,};
  bool visited[MAX][MAX] = {false,};
+```
+```cpp
+ bool compare(pair<int, int> &a, pair<int, int> &b) {
+    if(a.second == b.second)
+        return a.first < b.first;
+    
+    return a.second < b.second;
+}
 ```
  
 ---
