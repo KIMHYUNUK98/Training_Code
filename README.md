@@ -13,6 +13,8 @@
 |String|   3   |11720, 1152, 10809|
 
 ## Programmers 코딩테스트 문제유형 정리
+
+### 완주하지 못한 선수[LEVEL 1]  
 **1. hash (unordered_map) 사용해서 원하는 문자가 반복된 경우 해당 string을 return하는 문제**  
 ```cpp
 unordered_map <string, int> part_arr;
@@ -25,6 +27,24 @@ unordered_map <string, int> part_arr;
     for(string name : participant) {
         if(part_arr[name] == 1)
             return name;
+    }
+```
+### 전화번호 목록[LEVEL 2]  
+**2. 반복되는 번호가 다른 전화번호의 앞자리에 위치해 있는지 찾는 문제**  
+    **숫자를 string으로 받고 sort를 하면 사전 배열로 정렬 되므로 for문을 한 번만 사용해서 접두어 유무를 파악할 수 있다.**  
+```cpp
+sort(phone_book.begin(), phone_book.end());
+```
+### 위장[LEVEL 2]  
+**3. unordered_map을 이용해 해당 종류의 옷이 각각 몇 벌 있는지 초기화 시키고 조합을 이용해 입을 수 있는 옷의 종류 파악하는 문제**  
+```cpp
+unordered_map<string, int> hash_map;
+    for(vector<string> pair : clothes)
+        hash_map[pair[1]]++;
+    
+    unordered_map<string, int>::iterator iter;
+    for(iter = hash_map.begin() ; iter != hash_map.end() ; iter++) {
+        answer *= iter->second+1;
     }
 ```
 
