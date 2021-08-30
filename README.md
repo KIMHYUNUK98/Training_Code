@@ -47,6 +47,23 @@ unordered_map<string, int> hash_map;
         answer *= iter->second+1;
     }
 ```
+### 추석 트래픽 [카카오 블라인드 채용 문제]  
+**String으로 넘어온 시각과 시간을 INT 타입으로 변환 후 서로 다른 vector 함수에 넣어놓고
+  end_time이후 1초의 시간동안 start_time의 값이 작으면 count를 해주는 방식으로 최댓값을 찾는 알고리즘**  
+```cpp
+    h = lines[i].substr(11,2);
+    m = lines[i].substr(14,2);
+    s = lines[i].substr(17,2);
+    ms = lines[i].substr(20,3);
+    process = stof(lines[i].substr(24,5)) * 1000;
+
+for(int j = i ; j < lines.size() ; j++) {
+            if(start_t[j] < end_time)
+                count++;
+        }
+        if(answer < count)
+            answer = count;
+```
 
 ## Priority_Queue 사용법
 **1. queue<pair<int,int>> q // priority_queue<int> pq의 사용으로 프린터 큐 알고리즘을 완성**  
